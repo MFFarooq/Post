@@ -5,7 +5,6 @@ import styles from "@/app/styles.module.css";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import AllPosts from "./allposts/page";
-import ShowHide from "../example/page";
 
 function PostForm() {
     const [api, setApi] = useState([]);
@@ -22,8 +21,11 @@ function PostForm() {
             .then(res => {
                 setApi(res.data);
                 setPostCount(res.data.length);
+            })
+            .catch(err=>{
+                console.log('Server is not running. '+err);
             });
-    }, [api]);
+    }, []);
 
     const onSubmit = async (data: any) => {
         setDescMsg('');
@@ -51,7 +53,7 @@ function PostForm() {
         else
             setDesc(e.target.value);
     }
-    const onReset = () => {
+    const ResetPost = () => {
             setName('');
             setDesc('');
     }
@@ -72,11 +74,14 @@ function PostForm() {
                     </div>
                 </div>
                 <div>
-                    <input className={styles.uText} type="text" {...register("name", { required: true, minLength: 3, value: desc })} style={{width:'60%', marginBottom:'5px', height:'17px'}} placeholder="Your name please..." id="nameid" onChange={onChange} />
-                    <textarea className={styles.uText} style={{width:'60%'}} {...register("description", { required: true, minLength: 5 })} placeholder="Type a post...message...or anything you just want to share with others..." id="descid" rows={10} onChange={onChange} value={desc}></textarea>
+                    <input className={styles.uText} type="text" 
+                    {...register("name", { required: true, minLength: 3 })} style={{width:'60%', marginBottom:'5px', height:'17px'}} placeholder="Your name please..." id="nameid" onChange={onChange} value={name} />
+                    
+                    <textarea className={styles.uText} style={{width:'60%'}} 
+                    {...register("description", { required: true, minLength: 5 })} placeholder="Type a post...message...or anything you just want to share with others..." id="descid" rows={10} onChange={onChange} value={desc}></textarea>
                 </div>
                 <div>
-                    <button className={styles.bCancel}>Reset</button>
+                    <button className={styles.bCancel} onClick={ResetPost}>Reset</button>
                     <button className={styles.btnSubmit} type="submit">Submit</button>
 
                 </div>

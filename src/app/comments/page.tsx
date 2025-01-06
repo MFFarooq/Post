@@ -14,16 +14,15 @@ export const AllComments = ({ comment }: any) => {
             await axios.delete("http://localhost:8000/api/comments/" + cid, cid)
                 .then(res => {
                     setShow(false);
-                    console.log(res.data)
                 })
                 .catch(err => {
                     console.log(err);
-                })
+                });
+
                 toggleFlag(!flag);
-                
                 setTimeout(() => {
                     toggleFlag(flag => !flag)
-                }, 3000);
+                }, 5000);
         }
         else {
         }
@@ -41,14 +40,13 @@ export const AllComments = ({ comment }: any) => {
                 toggleFlag(!flag);
                 setTimeout(() => {
                     toggleFlag(flag => !flag)
-                }, 3000);
+                }, 5000);
             })
             .catch(err => {
                 console.error(err);
             });
     };
     const onEdit = (cid: any) => {
-        console.log(cid)
         setShow(true);
     };
     const onChange = (e: any) => {

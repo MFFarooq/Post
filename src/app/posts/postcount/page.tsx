@@ -12,7 +12,7 @@ export const PostCount = () => {
             .catch(err=>{
                 console.error(err);
             })
-    }, [true]);
+    }, []);
   return (
     <div>{count}</div>
   )

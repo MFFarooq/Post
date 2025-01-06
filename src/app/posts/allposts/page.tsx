@@ -22,7 +22,6 @@ const AllPosts = ({ post }: any) => {
             await axios.delete("http://localhost:8000/api/posts/" + post.id, post.id)
                 .then(res => {
                     setShow(false);
-                    //console.log(res.data)
                 })
                 .catch(err => {
                     console.log(err);
@@ -76,13 +75,12 @@ const AllPosts = ({ post }: any) => {
     useEffect(() => {
         axios.get("http://localhost:8000/api/comments/" + post.id)
             .then(res => {
-                console.log(res.data);
                 setApi(res.data);
             })
             .catch(err => {
                 console.error(err);
             })
-    }, [api]);
+    }, []);
     return (
         //All Posts with their comments
         <div>

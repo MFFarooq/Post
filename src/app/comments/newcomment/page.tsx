@@ -33,6 +33,9 @@ export const NewComment = (pid:any) => {
 const onChange = (e: any) => {
       setDesc(e.target.value);
 }
+const ResetComment = () => {
+  setDesc('');
+}
   return (
     // Add New Comment
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -44,7 +47,7 @@ const onChange = (e: any) => {
           <textarea className={styles.uText} style={{width:'60%'}} {...register("description", { required: true, minLength: 5 })} placeholder="Type a comment..." id="descid" rows={10} onChange={onChange} value={desc}></textarea>
         </div>
         <div>
-          <button className={styles.bCancel}>Reset</button>
+          <button className={styles.bCancel} onClick={ResetComment} >Reset</button>
           <button className={styles.bNewComment} type="submit">Submit</button>
           {
             errors.description?.type == "minLength" && <p style={{ color: 'red' }}>Minimum length of comment is 5 charactors.</p>
