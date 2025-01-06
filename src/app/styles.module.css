@@ -1,0 +1,110 @@
+.left {
+  left: 0;
+}
+
+.btnSubmit {
+  background-color: darkgreen;
+  color: white;
+  border: 0;
+  margin: 10px;
+  width: 29%;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btnEdit {
+  background-color: #6464ff;
+  color: white;
+  border: 0;
+  margin: 10px;
+  width: 100px;
+  height: 30px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btnDel {
+  background-color: rgb(255, 151, 151);
+  color: white;
+  border: 0;
+  margin: 10px;
+  width: 100px;
+  height: 30px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.txt {
+  display: block;
+  margin: 10px;
+  border-radius: 5px;
+  width: 60%;
+  border-color: lightgrey;
+  border-width: 1px;
+  box-shadow: 0px 0px 3px 0px black inset;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: white;
+  font-size: 14px;
+}
+
+.tName {
+  display: block;
+  margin: 10px;
+  border-radius: 5px;
+  width: 60%;
+  height: 25px;
+  border-color: lightgrey;
+  border-width: 1px;
+  box-shadow: 0px 0px 3px 0px black inset;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: white;
+  font-size: 14px;
+}
+
+.page {
+  margin-top: 100px;
+  /* text-align: center; */
+}
+
+.newpost {
+  text-align: -webkit-center;
+  background-color: #e5fde5;
+  border-radius: 7px;
+  padding: 10px;
+}
+
+
+.timeline {
+  text-align: left;
+}
+
+.bNewComment {
+  background-color: chocolate;
+  color: white;
+  border: 0;
+  margin: 10px;
+  width: 29%;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.bCancel {
+  background-color: lightgray;
+
+  border: 0;
+  margin: 10px;
+  width: 29%;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.uText{
+  width: 96%;
+  box-shadow: 0px 0px 4px 0px darkgreen inset;
+  border-radius: 5px;
+  padding: 5px;
+}
